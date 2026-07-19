@@ -4,6 +4,7 @@
 <head>
     <!-- Helps the website display correctly on phones and computers -->
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- This is the name shown on the browser tab -->
@@ -13,6 +14,11 @@
         /* Removes the browser's default spacing */
         * {
             box-sizing: border-box;
+        }
+
+        /* Makes scrolling between sections smooth */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Controls the main look of the entire website */
@@ -32,6 +38,9 @@
             align-items: center;
             flex-wrap: wrap;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         /* Salon name inside the navigation bar */
@@ -112,6 +121,7 @@
             max-width: 1100px;
             margin: 0 auto 70px;
             text-align: center;
+            scroll-margin-top: 110px;
         }
 
         /* Titles such as Services, Our Work, and Reviews */
@@ -163,6 +173,24 @@
             box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
         }
 
+        /* Available appointment section */
+        .schedule-box {
+            background-color: white;
+            max-width: 750px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Booking instructions */
+        .schedule-box p {
+            margin-top: 0;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
         /* Review boxes */
         .review {
             background-color: white;
@@ -174,16 +202,6 @@
             box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
         }
 
-        /* Available appointment section */
-        .schedule-box {
-            background-color: white;
-            max-width: 700px;
-            margin: auto;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-        }
-
         /* Contact information area */
         .contact-box {
             background-color: white;
@@ -192,6 +210,18 @@
             padding: 30px;
             border-radius: 20px;
             line-height: 1.8;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Phone number link */
+        .contact-box a {
+            color: #6f4ca5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
         }
 
         /* Bottom of the website */
@@ -212,6 +242,12 @@
 
             .nav-links {
                 justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                min-height: 65vh;
+                padding: 60px 20px;
             }
 
             .hero h1 {
@@ -222,8 +258,16 @@
                 font-size: 18px;
             }
 
+            section h2 {
+                font-size: 29px;
+            }
+
             .gallery {
                 grid-template-columns: 1fr;
+            }
+
+            .schedule-box {
+                padding: 25px 15px;
             }
         }
     </style>
@@ -239,7 +283,7 @@
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#gallery">Our Work</a>
-            <a href="#schedule">Schedule</a>
+            <a href="#schedule">Book</a>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
         </div>
@@ -248,148 +292,138 @@
     <!-- Main welcome section -->
     <header class="hero" id="home">
         <div class="hero-content">
+
             <h1>Lily's Nail & Spa</h1>
 
             <p class="tagline">
                 Beautiful nails, relaxing service, and exceptional care.
             </p>
 
-            <!-- Replace the # with your real booking link later -->
-            <!-- BOOKING SECTION -->
-<section id="schedule">
-    <h2>Book an Appointment</h2>
+            <!-- This button moves the customer to the booking section -->
+            <a href="#schedule" class="button">
+                Book an Appointment
+            </a>
 
-    <p>
-        Choose your service, date, and available appointment time below.
-    </p>
-
-    <!-- Start Square Appointments Embed Code -->
-    <script src="https://app.squareup.com/appointments/buyer/widget/a20uetbzjducf1/L3AP0T6DTA1KV.js"></script>
-    <!-- End Square Appointments Embed Code -->
-</section>
-            
         </div>
     </header>
 
     <!-- Services offered by the salon -->
-<section id="services">
+    <section id="services">
 
-    <h2>Our Services</h2>
+        <h2>Our Services</h2>
 
-    <div class="card-container">
+        <div class="card-container">
 
-        <div class="card">
-            <h3> Manicures</h3>
-            <p>Classic, French, and custom manicures for every style.</p>
+            <div class="card">
+                <h3>Manicures</h3>
+                <p>Classic, French, and custom manicures for every style.</p>
+            </div>
+
+            <div class="card">
+                <h3>Pedicures</h3>
+                <p>Relaxing pedicures that leave your feet refreshed.</p>
+            </div>
+
+            <div class="card">
+                <h3>Gel Manicures</h3>
+                <p>Long-lasting gel polish with a flawless shine.</p>
+            </div>
+
+            <div class="card">
+                <h3>Acrylic Nails</h3>
+                <p>Beautiful acrylic sets with custom shapes and lengths.</p>
+            </div>
+
+            <div class="card">
+                <h3>Dip Powder</h3>
+                <p>Strong, durable nails with a natural feel.</p>
+            </div>
+
+            <div class="card">
+                <h3>Nail Art & Designs</h3>
+                <p>Custom artwork, rhinestones, seasonal, and trendy designs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Nail Extensions</h3>
+                <p>Lengthen your nails with professional extensions.</p>
+            </div>
+
+            <div class="card">
+                <h3>Nail Repair</h3>
+                <p>Repair cracked, chipped, or broken nails.</p>
+            </div>
+
+            <div class="card">
+                <h3>Polish Removal</h3>
+                <p>Safe removal of gel, dip powder, and acrylic polish.</p>
+            </div>
+
+            <div class="card">
+                <h3>Kids' Manicures</h3>
+                <p>Fun and gentle manicures designed for children.</p>
+            </div>
+
+            <div class="card">
+                <h3>Men's Manicures</h3>
+                <p>Professional nail care for clean and healthy hands.</p>
+            </div>
+
+            <div class="card">
+                <h3>Hand & Foot Massages</h3>
+                <p>Relaxing massages to complete your spa experience.</p>
+            </div>
+
+            <div class="card">
+                <h3>Waxing</h3>
+                <p>Professional facial and body waxing services.</p>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3> Pedicures</h3>
-            <p>Relaxing pedicures that leave your feet refreshed.</p>
-        </div>
-
-        <div class="card">
-            <h3> Gel Manicures</h3>
-            <p>Long-lasting gel polish with a flawless shine.</p>
-        </div>
-
-        <div class="card">
-            <h3> Acrylic Nails</h3>
-            <p>Beautiful acrylic sets with custom shapes and lengths.</p>
-        </div>
-
-        <div class="card">
-            <h3> Dip Powder</h3>
-            <p>Strong, durable nails with a natural feel.</p>
-        </div>
-
-        <div class="card">
-            <h3> Nail Art & Designs</h3>
-            <p>Custom artwork, rhinestones, seasonal, and trendy designs.</p>
-        </div>
-
-        <div class="card">
-            <h3> Nail Extensions</h3>
-            <p>Lengthen your nails with professional extensions.</p>
-        </div>
-
-        <div class="card">
-            <h3> Nail Repair</h3>
-            <p>Repair cracked, chipped, or broken nails.</p>
-        </div>
-
-        <div class="card">
-            <h3> Polish Removal</h3>
-            <p>Safe removal of gel, dip powder, and acrylic polish.</p>
-        </div>
-
-        <div class="card">
-            <h3> Kids' Manicures</h3>
-            <p>Fun and gentle manicures designed for children.</p>
-        </div>
-
-        <div class="card">
-            <h3> Men's Manicures</h3>
-            <p>Professional nail care for clean and healthy hands.</p>
-        </div>
-
-        <div class="card">
-            <h3> Hand & Foot Massages</h3>
-            <p>Relaxing massages to complete your spa experience.</p>
-        </div>
-
-        <div class="card">
-            <h3> Waxing</h3>
-            <p>Professional facial and body waxing services.</p>
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
     <!-- Nail photo gallery -->
     <section id="gallery">
+
         <h2>Our Work</h2>
 
         <div class="gallery">
-            <!-- These will be replaced with real nail photos later -->
+
+            <!-- Replace these boxes with real nail photos later -->
             <div class="photo">Nail Photo 1</div>
             <div class="photo">Nail Photo 2</div>
             <div class="photo">Nail Photo 3</div>
             <div class="photo">Nail Photo 4</div>
             <div class="photo">Nail Photo 5</div>
             <div class="photo">Nail Photo 6</div>
+
         </div>
+
     </section>
 
-    <!-- Appointment schedule section -->
+    <!-- Square appointment booking section -->
     <section id="schedule">
-        <h2>Schedule an Appointment</h2>
+
+        <h2>Book an Appointment</h2>
 
         <div class="schedule-box">
+
             <p>
-                View available dates and choose a time that works best for you.
+                Choose your service, date, and available appointment time below.
             </p>
 
-            <!-- Replace the # with your booking or calendar link -->
-            <!-- BOOKING SECTION -->
-<section id="schedule">
-    <h2>Book an Appointment</h2>
+            <!-- Start Square Appointments Embed Code -->
+            <script src="https://app.squareup.com/appointments/buyer/widget/a20uetbzjducf1/L3AP0T6DTA1KV.js"></script>
+            <!-- End Square Appointments Embed Code -->
 
-    <p>
-        Choose your service, date, and available appointment time below.
-    </p>
-
-    <!-- Start Square Appointments Embed Code -->
-    <script src="https://app.squareup.com/appointments/buyer/widget/a20uetbzjducf1/L3AP0T6DTA1KV.js"></script>
-    <!-- End Square Appointments Embed Code -->
-</section>
-            
         </div>
+
     </section>
 
     <!-- Customer review section -->
     <section id="reviews">
+
         <h2>Client Reviews</h2>
 
         <!-- Replace these examples with real customer reviews -->
@@ -410,18 +444,40 @@
             <br>
             “My nails came out exactly how I wanted them.”
         </div>
+
     </section>
 
     <!-- Contact details -->
     <section id="contact">
+
         <h2>Contact Us</h2>
 
         <div class="contact-box">
-            <!-- Change these details to the salon's real information -->
-            <p><strong>Address:</strong> 543 60th St, West New York, NJ 07093</p>
-            <p><strong>Phone:</strong> (551)342-4943</p>
-            <p><strong>Hours:</strong> Monday-Friday, 9:30 AM to 7:30 PM<br> Saturday, 9:00 AM to 7:00 PM<br> Sunday, Closed</p>
+
+            <p>
+                <strong>Address:</strong>
+                543 60th St, West New York, NJ 07093
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <a href="tel:+15513424943">
+                    (551) 342-4943
+                </a>
+            </p>
+
+            <p>
+                <strong>Hours:</strong>
+                <br>
+                Monday-Friday: 9:30 AM to 7:30 PM
+                <br>
+                Saturday: 9:00 AM to 7:00 PM
+                <br>
+                Sunday: Closed
+            </p>
+
         </div>
+
     </section>
 
     <!-- Footer at the bottom -->
