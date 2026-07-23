@@ -18,7 +18,7 @@
 
         /* Makes scrolling between sections smooth */
         html {
-            scroll-behavior: auto;
+            scroll-behavior: smooth;
         }
 
         /* Controls the main look of the entire website */
@@ -183,13 +183,7 @@
     border-radius: 20px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    overflow-anchor: none;
 }
-     #schedule,
-.schedule-box,
-.schedule-box iframe {
-    overflow-anchor: none;
-}   
       
 
         /* Booking instructions */
@@ -412,25 +406,6 @@
 
     </section>
 
-    <!-- Square appointment booking section -->
-    <section id="schedule">
-
-        <h2>Book an Appointment</h2>
-
-        <div class="schedule-box">
-
-            <p>
-                Choose your service, date, and available appointment time below.
-            </p>
-
-            <!-- Start Square Appointments Embed Code -->
-            <script src="https://app.squareup.com/appointments/buyer/widget/a20uetbzjducf1/L3AP0T6DTA1KV.js"></script>
-            <!-- End Square Appointments Embed Code -->
-
-        </div>
-
-    </section>
-
     <!-- Customer review section -->
     <section id="reviews">
 
@@ -489,6 +464,26 @@
         </div>
 
     </section>
+
+    <!-- Square appointment booking section -->
+    <section id="schedule">
+
+        <h2>Book an Appointment</h2>
+
+        <div class="schedule-box">
+
+            <p>
+                Choose your service, date, and available appointment time below.
+            </p>
+
+            <!-- Start Square Appointments Embed Code -->
+            <script src="https://app.squareup.com/appointments/buyer/widget/a20uetbzjducf1/L3AP0T6DTA1KV.js"></script>
+            <!-- End Square Appointments Embed Code -->
+
+        </div>
+
+    </section>
+
 
     <!-- Footer at the bottom -->
     <footer>
