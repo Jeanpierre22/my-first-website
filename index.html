@@ -18,7 +18,7 @@
 
         /* Makes scrolling between sections smooth */
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: auto;
         }
 
         /* Controls the main look of the entire website */
@@ -183,7 +183,13 @@
     border-radius: 20px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    overflow-anchor: none;
 }
+     #schedule,
+.schedule-box,
+.schedule-box iframe {
+    overflow-anchor: none;
+}   
       
 
         /* Booking instructions */
