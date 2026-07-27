@@ -44,12 +44,10 @@
         }
 
         /* Salon name inside the navigation bar */
-        .logo {
-    margin: 0;
-    font-size: 40px;
-    color: #6f4ca5;
-    font-family: 'Allura', cursive;
-    font-weight: normal;
+        .logo{
+    height:70px;
+    width:auto;
+    display:block;
 }
 
         /* Holds the navigation links */
@@ -88,6 +86,11 @@
         .hero-content {
             max-width: 800px;
         }
+        .hero-logo {
+    width: 280px;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
 
         /* Main salon title */
         .hero h1 {
@@ -295,7 +298,10 @@
 
     <!-- Navigation bar at the top of the website -->
     <nav>
-        <h2 class="logo">Lily's Nail & Spa</h2>
+        
+        <a href="#home">
+    <img src="images/IMG_20240829_131306_401.JPG" alt="Lily's Nail & Spa Logo" class="logo">
+</a>
 
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -311,7 +317,11 @@
     <header class="hero" id="home">
         <div class="hero-content">
 
-            <h1>Lily's Nail & Spa</h1>
+            <img src="images/logo.png"
+     alt="Lily's Nail & Spa Logo"
+     class="hero-logo">
+
+<h1>Lily's Nail & Spa</h1>
 
             <p class="tagline">
                 Beautiful nails, relaxing service, and exceptional care.
