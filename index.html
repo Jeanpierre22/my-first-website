@@ -61,15 +61,30 @@ nav {
 
 
 .nav-links a {
-    color:#222;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s ease;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color .3s ease;
 }
 
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #7a5bb8;
+    transition: width .3s ease;
+}
 
 .nav-links a:hover {
-    color:#7a5bb8;
+    color: #7a5bb8;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 
