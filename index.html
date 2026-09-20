@@ -556,29 +556,42 @@ footer {
     font-size:18px;
     color:white;
 }
+```css
 /* Mobile */
 
-@media(max-width:750px){
+@media (max-width: 768px) {
 
-.about-container{
-    flex-direction:column;
-    text-align:center;
-    gap:40px;
+    #popular-picks {
+        padding: 70px 6%;
+    }
+
+    #popular-picks .section-title h2 {
+        font-size: 48px;
+    }
+
+    .popular-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .popular-card img {
+        height: 140px;
+    }
+
+    .popular-info {
+        padding: 10px;
+    }
+
+    .popular-info h3 {
+        font-size: 18px;
+    }
+
+    .popular-info p {
+        font-size: 11px;
+    }
 }
+```
 
-.about-image img{
-    width:280px;
-}
-
-.about-text h2{
-    font-size:48px;
-}
-.card-container{
-
-    grid-template-columns: repeat(3,1fr);
-   
-
-}
 
 
 nav{
