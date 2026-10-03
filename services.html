@@ -393,7 +393,13 @@ footer {
     top: -100px;
     animation: seasonal-fall 12s linear infinite;
 }
-
+.seasonal-leaves-right {
+    width: 100px;
+    right: 18%;
+    top: -100px;
+    animation: seasonal-fall 14s linear infinite;
+    animation-delay: 4s;
+}
 .seasonal-pumpkins {
     width: 180px;
     right: 4%;
@@ -437,10 +443,14 @@ footer {
 }
 
 @media (max-width: 750px) {
-    .seasonal-web-left,
+    .seasonal-web-left{
+        width: 90px;
+        top: 100px;
+    }
+    
     .seasonal-web-right {
         width: 90px;
-        top: 80px;
+        top: 107px;
     }
 
     .seasonal-ghost-one,
@@ -478,6 +488,7 @@ footer {
     <img src="images/halloween10.png" class="seasonal-ghost-two">
 
     <img src="images/halloween7.png" class="seasonal-leaves">
+    <img src="images/halloween11.png" class="seasonal-leaves-right">
 
     <img src="images/halloween9.png" class="seasonal-pumpkins">
 
