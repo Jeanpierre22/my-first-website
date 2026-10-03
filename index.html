@@ -760,9 +760,128 @@ section h2{
         font-size: 11px;
     }
 }
+/* ===== SEASONAL DECORATIONS ===== */
 
+.seasonal-decor {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.seasonal-decor img {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+}
+
+.seasonal-web-left {
+    width: 145px;
+    left: 0;
+    top: 95px;
+}
+
+.seasonal-web-right {
+    width: 145px;
+    right: 0;
+    top: 95px;
+}
+
+.seasonal-ghost-one {
+    width: 75px;
+    left: 5%;
+    top: 42%;
+    animation: seasonal-float 4s ease-in-out infinite;
+}
+
+.seasonal-ghost-two {
+    width: 75px;
+    right: 5%;
+    top: 68%;
+    animation: seasonal-float 5s ease-in-out infinite;
+}
+
+.seasonal-leaves {
+    width: 100px;
+    left: 18%;
+    top: -100px;
+    animation: seasonal-fall 12s linear infinite;
+}
+
+.seasonal-pumpkins {
+    width: 180px;
+    right: 4%;
+    bottom: 70px;
+}
+
+.seasonal-leaf-accent {
+    width: 120px;
+    left: 2%;
+    bottom: 70px;
+}
+
+@keyframes seasonal-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes seasonal-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    .seasonal-web-left,
+    .seasonal-web-right {
+        width: 90px;
+        top: 80px;
+    }
+
+    .seasonal-ghost-one,
+    .seasonal-ghost-two {
+        width: 55px;
+    }
+
+    .seasonal-leaves {
+        width: 70px;
+    }
+
+    .seasonal-pumpkins {
+        width: 120px;
+        bottom: 55px;
+    }
+
+    .seasonal-leaf-accent {
+        width: 80px;
+        bottom: 55px;
+    }
+}
     
 </style>
+    
 
 
 </head>
